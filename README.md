@@ -176,29 +176,32 @@ This WIN700 project successfully demonstrates domain-based policy enforcement, a
 ## Screenshots
 - Group Policy creation
   <img width="869" height="555" alt="Screenshot 2025-11-03 at 15 34 13" src="https://github.com/user-attachments/assets/b98180b8-6295-48aa-9a79-2bef2e0823de" />
-
-- Software deployment menu
+---
+## Software deployment menu
   <img width="869" height="555" alt="Screenshot 2025-11-03 at 15 33 01" src="https://github.com/user-attachments/assets/c5b6a2f7-6053-4a53-a8f0-ef2f712d97a1" />
   
   <img width="1738" height="1110" alt="image" src="https://github.com/user-attachments/assets/8ed96d03-4061-4b41-869c-6a9a4516a677" />
 
 <img width="1738" height="1110" alt="image" src="https://github.com/user-attachments/assets/02da272a-110f-439d-8de0-805c60ef95c7" />
 
-- Personalization restriction
+---
+
+## Personalization restriction
 <img width="1682" height="1178" alt="image" src="https://github.com/user-attachments/assets/bf9ec67b-4427-4c5c-be84-f5bed8bbdf2e" />
 
 
   <img width="1388" height="1189" alt="image" src="https://github.com/user-attachments/assets/638dc532-1f16-438c-8df3-b77c8e15a6d3" />
 
-  
-- iSCSI disk creation wizard
+---
+ 
+## iSCSI disk creation wizard
 <img width="1738" height="1110" alt="image" src="https://github.com/user-attachments/assets/458fe38c-2392-47c3-8d91-819ef0c222f7" />
 
 
 
 ---
 
-- iSCSI target login success
+## iSCSI target login success
   <img width="869" height="528" alt="Screenshot 2025-11-03 at 15 38 53" src="https://github.com/user-attachments/assets/a7ad74dc-25e4-4003-a417-6de8cd74d244" />
 
   <img width="869" height="528" alt="Screenshot 2025-11-03 at 15 39 06" src="https://github.com/user-attachments/assets/d64f472f-6570-4a21-a2b9-4a7b119463df" />
@@ -214,7 +217,7 @@ This WIN700 project successfully demonstrates domain-based policy enforcement, a
 ---
 
 
-- Disk Management initialized volumes
+## Disk Management initialized volumes
 <img width="1198" height="595" alt="Screenshot 2025-11-03 at 15 41 43" src="https://github.com/user-attachments/assets/df4edb11-be79-4ca2-87b5-e3703eea03c8" />
 
 <img width="1229" height="706" alt="Screenshot 2025-11-03 at 15 43 06" src="https://github.com/user-attachments/assets/29802b74-5e85-4c6f-91fe-05dff409a621" />
