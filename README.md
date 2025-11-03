@@ -41,19 +41,60 @@ This project implements enterprise-level Windows Server administration by config
 
 ---
 
-## Environment Setup
-- Windows Server 2019 Domain Controller
-- Client system (joined to the domain)
-- Active Directory Domain Services (AD DS)
-- Group Policy Management Console (GPMC)
-- File & Storage Services
-- iSCSI Target Server role
+
+## 🖧 Network Architecture Diagram 
+
+```
+
+DC[Domain Controller (AD DS)] --> GPMC[Group Policy Management]
+DC --> iSCSI[iSCSI Target Server]
+GPMC --> OU[Accounting OU]
+OU --> Client[Client (SWIN700)]
+iSCSI --> VDisks[Virtual Disks (VHDX)]
+Client --> Initiator[iSCSI Initiator Login]
+Client --> Wallpaper[Wallpaper GPO Applied]
+Client --> Software[Software Installed via MSI]
+```
+
+---
+
+## 🏗️  Infrastructure Layout (ASCII)
+```
+                   +-----------------------------+
+                   |     Windows Server 2019     |
+                   |   Domain Controller (AD DS) |
+                   +--------------+--------------+
+                                  |
+                    Group Policy  |   iSCSI Virtual Disks
+                                  |
+           +----------------------+----------------------+
+           |                                             |
+   +-------v--------+                            +-------v--------+
+   |  Accounting OU |                            |  Target Server |
+   +-------+--------+                            +--------+-------+
+           |                                                |
++----------v----------+                    +----------------v----------------+
+| Domain User SWIN700 |                    | Virtual Disks: HARD1 / HARD2    |
++----------+----------+                    | Exposed as block devices        |
+           |                                +-------------------------------+
+           |
++----------v----------+
+|   Client Workstation|
+|  Wallpaper Enforced |
+| Software Auto-Install|
+| iSCSI Disks Mounted |
++---------------------+
+```
+
+
+
+---
 
 Domain Example:
 ```
 FinalNI.com
 ```
-<img width="2666" height="1204" alt="image" src="https://github.com/user-attachments/assets/693ef3f3-9f1b-4d43-9f00-22d5fd557732" />
+<img width="799" height="430" alt="image" src="https://github.com/user-attachments/assets/ec2c255b-79c4-4823-88b0-7325be9907de" />
 
 ---
 
@@ -221,6 +262,63 @@ This WIN700 project successfully demonstrates domain-based policy enforcement, a
 <img width="1198" height="595" alt="Screenshot 2025-11-03 at 15 41 43" src="https://github.com/user-attachments/assets/df4edb11-be79-4ca2-87b5-e3703eea03c8" />
 
 <img width="1229" height="706" alt="Screenshot 2025-11-03 at 15 43 06" src="https://github.com/user-attachments/assets/29802b74-5e85-4c6f-91fe-05dff409a621" />
+
+---
+## 📁 Repository Structure
+```
+Secure-Enterprise-Configuration-Group-Policy-Software-Deployment-and-iSCSI-Storage/
+├─ screenshots/
+│  ├─ gpo_wallpaper.png
+│  ├─ software_deployment.png
+│  ├─ iscsi_virtual_disk.png
+│  ├─ initiator_success.png
+│  ├─ disk_management.png
+├─ README.md
+└─ LICENSE
+```
+---
+
+---
+
+## 🔧 Skills Demonstrated
+- Active Directory administration
+- Group Policy Object (GPO) configuration
+- Organizational Unit (OU) targeting
+- Enterprise-level software deployment (MSI)
+- Desktop environment hardening
+- iSCSI Target Server provisioning
+- Client iSCSI session authentication
+- NTFS disk formatting and provisioning
+- Network share permissions
+- Troubleshooting via `gpupdate /force`
+
+---
+
+## 📚 What I Learned
+- How Group Policy can centrally enforce user restrictions across a domain.
+- The difference between Assigned vs. Published software packages.
+- How UNC paths are used for enterprise deployment and resource access.
+- How to back up GPOs for disaster recovery and migration.
+- How iSCSI enables block-level remote storage similar to SAN environments.
+- How to initialize, format, and mount remotely provisioned drives.
+- How domain login triggers policy processing and software application.
+
+---
+
+## 🔍 Possible Enhancements
+- Loopback processing for user settings on machines
+- Drive mapping via GPP (Group Policy Preferences)
+- Login banners for compliance
+- Folder redirection for user data
+
+---
+
+## ✅ Proof of Successful Implementation
+- Wallpaper Personalization greyed out
+- MSI installed during login automatically
+- iSCSI target connection status: **Login Succeeded**
+- Remote volumes appear in Disk Management
+- Partitions formatted and accessible (E:, F:)
 
 ---
 
